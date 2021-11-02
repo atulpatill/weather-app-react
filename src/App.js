@@ -1,21 +1,27 @@
 import styled from "styled-components";
+import CityComponent from "./modules/CityComponent";
+import WeatherInfoComponent from "./modules/WeatherInfoComponent";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 380px;
+  padding: 20px 10px;
+  margin: auto;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px 0 #555;
+  background: white;
+  font-family: Montserrat;
 
 `;
-const CityComponent = styled.div`
-  display: flex;
-  flex-direction: column;
 
-`;
-
-const WeatherComponent = styled.div`
-display: flex;
-flex-direction: column;
-
-`;
+const AppLabel = styled.span `
+color: black;
+margin: 20px auto;
+font-size: 18px;
+font-weight: bold;
+`
 
 
 
@@ -23,9 +29,9 @@ flex-direction: column;
 function App() {
   return (
     <>
-    <Container>Cool
-    <CityComponent>City components</CityComponent>
-    <WeatherComponent>WeatherComponent</WeatherComponent>
+    <Container>
+      <AppLabel>Weather App</AppLabel>
+     <CityComponent />
     </Container>
    </>
   );
