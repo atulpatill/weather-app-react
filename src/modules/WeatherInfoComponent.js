@@ -33,14 +33,59 @@ width: 90%;
 font-weight: bold;
 font-size: 14px;
 `
+const WeatherInfoContainer = styled.div`
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+`;
+
+const InfoContainer = styled.div`
+  display: flex;
+  margin: 5px 10px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+
+const InfoIcon = styled.img`
+  width: 36px;
+  height: 36px;
+`;
+
+const InfoLabel = styled.span`
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  margin: 15px;
+  & span {
+    font-size: 12px;
+    text-transform: capitalize;
+  }
+`;
+
+
+const WeatherInfoComponent= () =>{
+  return(
+    <>
+    <InfoContainer>
+    <InfoIcon />
+    <InfoLabel>
+      
+    </InfoLabel> 
+
+    </InfoContainer>
+    
+
+    </>
+  )
+}
 
 
 
-
-
-
-
-function WeatherComponents() {
+const WeatherComponents =()=> {
     return (
        <>
        <WeatherCondition>
@@ -51,6 +96,13 @@ function WeatherComponents() {
        </WeatherCondition>
        <Location>London , GB</Location>
        <WeatherInfoLabel>WeatherInfo</WeatherInfoLabel>
+       <WeatherInfoContainer>
+         <WeatherInfoComponent />
+         <WeatherInfoComponent />
+         <WeatherInfoComponent />
+         <WeatherInfoComponent />
+
+       </WeatherInfoContainer>
        </>
     )
 }
