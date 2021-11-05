@@ -42,14 +42,15 @@ display: flex;
   }
 `;
 
-function CityComponent() {
+function CityComponent(props) {
+  const {updateCity , fetchWeather} = props
     return (
       <>
         <WeatherLogo  src="/Icons/perfect-day.svg"/>
         <ChooseCityLabel>Find Weather of your city</ChooseCityLabel>
-        <SearchBox>
-            <input placeholder="City Name"></input>
-            <button>Check</button>
+        <SearchBox onSubmit={fetchWeather}>
+            <input placeholder="City Name" onChange={(e)=> updateCity(e.target.value)} ></input>
+           <button type={"submit"} >Check</button>
         </SearchBox>
       </>
     )
