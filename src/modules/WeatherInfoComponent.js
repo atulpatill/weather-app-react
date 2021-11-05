@@ -1,6 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
+export const WeatherInfoIcons = {
+  sunset: "/icons/temp.svg",
+  sunrise: "/icons/temp.svg",
+  humidity: "/icons/humidity.svg",
+  wind: "/icons/wind.svg",
+  pressure: "/icons/pressure.svg",
+};
+
 const WeatherCondition = styled.div `
 
 `;
@@ -67,13 +75,15 @@ const InfoLabel = styled.span`
 `;
 
 
-const WeatherInfoComponent= () =>{
+const WeatherInfoComponent= (props) =>{
+ const {name, value} = props
   return(
     <>
     <InfoContainer>
-    <InfoIcon />
+    <InfoIcon src={WeatherInfoIcons[name]} />
     <InfoLabel>
-      
+      {value}
+      <span>{name}</span>
     </InfoLabel> 
 
     </InfoContainer>
@@ -97,10 +107,10 @@ const WeatherComponents =()=> {
        <Location>London , GB</Location>
        <WeatherInfoLabel>WeatherInfo</WeatherInfoLabel>
        <WeatherInfoContainer>
-         <WeatherInfoComponent />
-         <WeatherInfoComponent />
-         <WeatherInfoComponent />
-         <WeatherInfoComponent />
+         <WeatherInfoComponent name="sunrise" value="12" />
+         <WeatherInfoComponent   name="humidity" value="1234" />
+         <WeatherInfoComponent  name="wind" value="12345"  />
+         <WeatherInfoComponent  name="pressure" value="123456"  />
 
        </WeatherInfoContainer>
        </>
