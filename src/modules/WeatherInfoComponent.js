@@ -95,7 +95,8 @@ const WeatherInfoComponent= (props) =>{
 
 
 
-const WeatherComponents =()=> {
+const WeatherComponents =(props)=> {
+  const {weather} = props;
     return (
        <>
        <WeatherCondition>

@@ -47,7 +47,7 @@ function App() {
     <Container>
       <AppLabel>Weather App</AppLabel>
       {weather? (
-      <WeatherComponents  />
+      <WeatherComponents weather={weather}  />
       ):(
          <CityComponent updateCity={updateCity} fetchWeather={fetchWeather}/>)}
       

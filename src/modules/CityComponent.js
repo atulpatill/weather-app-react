@@ -44,6 +44,7 @@ display: flex;
 
 function CityComponent(props) {
   const {updateCity , fetchWeather} = props;
+  
     return (
       <>
         <WeatherLogo  src="/Icons/perfect-day.svg"/>
